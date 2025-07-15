@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final HTML + CSS + JavaScript Demo</title>
 
+  <!-- Internal CSS based on Week 11 -->
+  <style type="text/css">
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial;
+    }
+    h1 {
+      color: maroon;
+    }
+    p {
+      color: blue;
+    }
+    .italicblue {
+      font-style: italic;
+      color: blue;
+    }
+    a:link, a:visited {
+      text-decoration: none;
+      color: gray;
+    }
+    a:hover {
+      color: maroon;
+      font-weight: bolder;
+    }
+    table {
+      border: 1px solid black;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+
+  <!-- JavaScript based on Week 13 -->
+  <script type="text/javascript">
+    // Global counters for button clicks
+    var redCount = 0;
+    var blueCount = 0;
+
+    // Display a message
+    function displayMessage() {
+      alert("Hello! This is JavaScript.");
+    }
+
+    // Button click counter
+    function countRed() {
+      redCount++;
+      document.simpleForm.response.value = "Red clicked " + redCount + " times.";
+    }
+
+    function countBlue() {
+      blueCount++;
+      document.simpleForm.response.value = "Blue clicked " + blueCount + " times.";
+    }
+
+    function showTotal() {
+      document.simpleForm.response.value = "Red: " + redCount + ", Blue: " + blueCount;
+    }
+
+    function resetForm() {
+      redCount = 0;
+      blueCount = 0;
+      document.simpleForm.reset();
+    }
+
+    // Simple calculator
+    function calculateSum() {
+      var num1 = document.calcForm.num1.value;
+      var num2 = document.calcForm.num2.value;
+
+      if (num1 === "" || num2 === "") {
+        alert("Both boxes need values!");
+        return;
+      }
+
+      var sum = parseFloat(num1) + parseFloat(num2);
+      document.calcForm.result.value = sum;
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Week 10–13 Summary Web Page</h1>
+
+  <!-- Paragraphs and formatting -->
+  <p>This is a <b>bold</b> and <em>emphasized</em> paragraph.</p>
+  <p class="italicblue">This is italic and blue.</p>
+
+  <!-- List example -->
+  <h3>Useful Websites</h3>
+  <ul>
+    <li><a href="https://www.google.com">Google Search</a></li>
+    <li><a href="https://www.w3schools.com">W3Schools</a></li>
+  </ul>
+
+  <!-- Table example -->
+  <h3>Sample Table</h3>
+  <table>
+    <caption>Simple Table</caption>
+    <tr><th>Header 1</th><th>Header 2</th></tr>
+    <tr><td>Row 1</td><td>Data</td></tr>
+    <tr><td>Row 2</td><td>Data</td></tr>
+  </table>
+
+  <!-- Image example -->
+  <h3>Image</h3>
+  <img src="https://via.placeholder.com/100" alt="Sample Image" width="100" height="100" />
+
+  <!-- Form with buttons and text area -->
+  <h3>Button Demo with JavaScript</h3>
+  <form name="simpleForm">
+    <input type="button" value="Say Hello" onclick="displayMessage()" /><br><br>
+
+    <input type="button" value="Red" onclick="countRed()" />
+    <input type="button" value="Blue" onclick="countBlue()" />
+    <input type="button" value="Total" onclick="showTotal()" />
+    <input type="reset" value="Reset" onclick="resetForm()" /><br><br>
+
+    <textarea name="response" rows="3" cols="30">Click buttons to see message</textarea>
+  </form>
+
+  <!-- Calculator Form -->
+  <h3>Simple Calculator</h3>
+  <form name="calcForm">
+    Number 1: <input type="text" name="num1" size="5" />
+    Number 2: <input type="text" name="num2" size="5" />
+    <input type="button" value="Add" onclick="calculateSum()" />
+    <br><br>
+    Result: <input type="text" name="result" size="10" readonly />
+  </form>
+
+  <!-- Prompt Example -->
+  <script type="text/javascript">
+    // Ask for name on page load
+    var user = prompt("What is your name?");
+    document.write("<p>Hello, <b>" + user + "</b>!</p>");
+  </script>
+
+</body>
+</html>
