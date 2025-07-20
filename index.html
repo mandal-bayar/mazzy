@@ -1,148 +1,54 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Final HTML + CSS + JavaScript Demo</title>
-
-  <!-- Internal CSS based on Week 11 -->
-  <style type="text/css">
-    body {
-      background-color: #f0f0f0;
-      font-family: Arial;
-    }
-    h1 {
-      color: maroon;
-    }
-    p {
-      color: blue;
-    }
-    .italicblue {
-      font-style: italic;
-      color: blue;
-    }
-    a:link, a:visited {
-      text-decoration: none;
-      color: gray;
-    }
-    a:hover {
-      color: maroon;
-      font-weight: bolder;
-    }
-    table {
-      border: 1px solid black;
-      width: 100%;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 5px;
-      text-align: center;
-    }
-  </style>
-
-  <!-- JavaScript based on Week 13 -->
-  <script type="text/javascript">
-    // Global counters for button clicks
-    var redCount = 0;
-    var blueCount = 0;
-
-    // Display a message
-    function displayMessage() {
-      alert("Hello! This is JavaScript.");
-    }
-
-    // Button click counter
-    function countRed() {
-      redCount++;
-      document.simpleForm.response.value = "Red clicked " + redCount + " times.";
-    }
-
-    function countBlue() {
-      blueCount++;
-      document.simpleForm.response.value = "Blue clicked " + blueCount + " times.";
-    }
-
-    function showTotal() {
-      document.simpleForm.response.value = "Red: " + redCount + ", Blue: " + blueCount;
-    }
-
-    function resetForm() {
-      redCount = 0;
-      blueCount = 0;
-      document.simpleForm.reset();
-    }
-
-    // Simple calculator
-    function calculateSum() {
-      var num1 = document.calcForm.num1.value;
-      var num2 = document.calcForm.num2.value;
-
-      if (num1 === "" || num2 === "") {
-        alert("Both boxes need values!");
-        return;
-      }
-
-      var sum = parseFloat(num1) + parseFloat(num2);
-      document.calcForm.result.value = sum;
-    }
-  </script>
+  <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
 
-  <h1>Week 10–13 Summary Web Page</h1>
+<div class="header">
+  <h1>Introduction to Information Systems Engineering Final Assignment</h1>
+</div>
 
-  <!-- Paragraphs and formatting -->
-  <p>This is a <b>bold</b> and <em>emphasized</em> paragraph.</p>
-  <p class="italicblue">This is italic and blue.</p>
+<div class="navbar">
+  <a href="index.html">HOME</a> |
+  <a href="portfolio.html">PORTFOLIO</a> |
+  <a href="trivia.html">TRIVIA</a>
+</div>
 
-  <!-- List example -->
-  <h3>Useful Websites</h3>
-  <ul>
-    <li><a href="https://www.google.com">Google Search</a></li>
-    <li><a href="https://www.w3schools.com">W3Schools</a></li>
-  </ul>
+<div class="container">
+  <div class="left">
+    <p><a href="https://www.udemy.com" target="_blank">Udemy</a></p>
+    <p><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></p>
+    <p><a href="https://www.coursera.org" target="_blank">Coursera</a></p>
+  </div>
 
-  <!-- Table example -->
-  <h3>Sample Table</h3>
-  <table>
-    <caption>Simple Table</caption>
-    <tr><th>Header 1</th><th>Header 2</th></tr>
-    <tr><td>Row 1</td><td>Data</td></tr>
-    <tr><td>Row 2</td><td>Data</td></tr>
-  </table>
+  <div class="center">
+    <p>
+      I miss two things more than anything else since coming to Japan: my Toyota LandCruiser 70 and my Yamaha AG100. There’s an honesty to them both; they’re indestructible, easy to maintain, and incredibly fun. The LandCruiser 70 isn’t refined or luxurious, it’s pure utility. When the pavement ends and the trail begins, that's when it comes to life. It's slow, noisy, and you feel every bump, but that’s the point. There are no complex electronics to fail, just a solid engine and a chassis built for abuse. It connects you directly to the terrain in a way modern SUVs never could.
+    </p>
+    <p>
+      The Yamaha AG100 is the perfect two-wheeled counterpart. It’s light, stupidly reliable, and handles rough country like a goat. You can kickstart it in the pouring rain, ride it through deep mud, or patch it up with pliers and some wire—it just won’t complain. It's a simple machine that gives you the confidence to explore places you wouldn't dare take a bigger, heavier bike. Riding one through miles of hard terrain, with just the thrum of that little engine for company, is some of the most genuine fun I've ever had.
+    </p>
+    <img src="https://toyota.jp/pages/contents/landcruiser70/003_p_001/image/top/feature_05.jpg" width="300"><br>
+    <img src="https://global.yamaha-motor.com/business/omdo/products/ag/img/ag_sl_001.jpg" width="300">
+  </div>
 
-  <!-- Image example -->
-  <h3>Image</h3>
-  <img src="https://via.placeholder.com/100" alt="Sample Image" width="100" height="100" />
+  <div class="right">
+    <form>
+      Name:<br><input type="text" name="name" size="20"><br>
+      Email:<br><input type="text" name="email" size="20"><br>
+      Message:<br><textarea rows="4" cols="20" name="msg"></textarea><br>
+      <input type="submit" value="SEND">
+      <input type="reset" value="CLEAR">
+    </form>
+  </div>
+</div>
 
-  <!-- Form with buttons and text area -->
-  <h3>Button Demo with JavaScript</h3>
-  <form name="simpleForm">
-    <input type="button" value="Say Hello" onclick="displayMessage()" /><br><br>
-
-    <input type="button" value="Red" onclick="countRed()" />
-    <input type="button" value="Blue" onclick="countBlue()" />
-    <input type="button" value="Total" onclick="showTotal()" />
-    <input type="reset" value="Reset" onclick="resetForm()" /><br><br>
-
-    <textarea name="response" rows="3" cols="30">Click buttons to see message</textarea>
-  </form>
-
-  <!-- Calculator Form -->
-  <h3>Simple Calculator</h3>
-  <form name="calcForm">
-    Number 1: <input type="text" name="num1" size="5" />
-    Number 2: <input type="text" name="num2" size="5" />
-    <input type="button" value="Add" onclick="calculateSum()" />
-    <br><br>
-    Result: <input type="text" name="result" size="10" readonly />
-  </form>
-
-  <!-- Prompt Example -->
-  <script type="text/javascript">
-    // Ask for name on page load
-    var user = prompt("What is your name?");
-    document.write("<p>Hello, <b>" + user + "</b>!</p>");
-  </script>
+<div class="footer">
+  Created July 2025<br>
+  <a href="https://toyota.jp/landcruiser70/" target="_blank">LandCruiser</a> |
+  <a href="https://global.yamaha-motor.com/business/omdo/products/ag/" target="_blank">Yamaha AG</a>
+</div>
 
 </body>
 </html>
